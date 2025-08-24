@@ -1,4 +1,4 @@
-import torch
+eimport torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader, random_split
 from datasets import load_dataset
@@ -17,7 +17,7 @@ from config import get_weights_file_path
 from tqdm import tqdm
 import warnings
 config_ = config.get_config()
-seqlen = config_['sq_len']
+seqlen = config_['seq_len']
 def get_all_sentences(ds, lang):
 
     for item in ds:
