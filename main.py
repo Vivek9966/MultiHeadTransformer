@@ -174,7 +174,7 @@ class Transformer(nn.Module):
         return self.decoder(x, encoder_output, tgt_mask, src_mask)
     def project(self, x):
         return self.projection_layer(x)
-def build_transformer(src_vocab_size:int,tgt_vocab_size,src_seq_len,tgt_seq_len:int,d_model = 512,N=10,h=8,dropout=.1,d_ff=2048):
+def build_transformer(src_vocab_size:int,tgt_vocab_size,src_seq_len,tgt_seq_len:int,d_model = 512,N=6,h=8,dropout=.1,d_ff=2048):
     #create the input and target embeddings
     src_embedding = Inputembeddings(src_vocab_size, d_model)
     tgt_embedding = Inputembeddings(tgt_vocab_size, d_model)
