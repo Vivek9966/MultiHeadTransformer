@@ -59,7 +59,7 @@ def get_dataset(config):
         max_len_tgt = max(max_len_tgt,len(tgt_ids))
     print(f"Max len of src  = {max_len_src} \n Max Len of tgt {max_len_tgt}")
 
-    train_dataloader = DataLoader(train_ds, batch_size=config['batch_size'], num_workers=4 ,shuffle=True)
+    train_dataloader = DataLoader(train_ds, batch_size=config['batch_size'], num_workers=8,pin_memory = True , persistent_workers=True ,shuffle=True)
     val_dataloader = DataLoader(val_ds, batch_size=1, shuffle=True)
     return train_dataloader, val_dataloader, tokenizer_src, tokenizer_tgt
 def get_model(config,vocab_src_len, vocab_tgt_len):
