@@ -16,7 +16,8 @@ from torch.utils.tensorboard  import SummaryWriter
 from config import get_weights_file_path
 from tqdm import tqdm
 import warnings
-seqlen = 512
+config_ = config.get_config()
+seqlen = config_['sq_len']
 def get_all_sentences(ds, lang):
 
     for item in ds:
